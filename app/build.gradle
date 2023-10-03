@@ -1,0 +1,107 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
+    id("androidx.navigation.safeargs.kotlin")
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'uz.gita.bookappmn'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "uz.gita.bookappmn"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // Navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    //firebase storage
+    implementation 'com.google.firebase:firebase-storage-ktx'
+
+    //firestore
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
+    // kotlinx.coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+
+    //glide for downland picture
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
+    // Android Runtime Permission Library
+    implementation 'com.karumi:dexter:6.2.3'
+
+    //viewBinding
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate-full:1.5.9'
+
+    //reader Pdf
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+
+    //refresh
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    // Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+
+    //Dagger hilt
+    implementation "com.google.dagger:hilt-android:2.45"
+    kapt "com.google.dagger:hilt-compiler:2.45"
+    implementation "androidx.hilt:hilt-navigation-fragment:1.0.0"
+
+    // Image Slider show
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
+
+    // room
+    implementation 'androidx.room:room-ktx:2.5.2'
+    kapt "androidx.room:room-compiler:2.5.2"
+
+    // ViewModel + LiveData
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    // Fragment
+    implementation 'androidx.fragment:fragment-ktx:1.6.0'
+}

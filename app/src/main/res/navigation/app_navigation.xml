@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/homeScreen">
+
+    <fragment
+        android:id="@+id/homeScreen"
+        tools:layout="@layout/screen_home"
+        android:name="uz.gita.bookappmn.presentation.ui.home.HomeScreen"
+        android:label="HomeScreen" >
+        <action
+            android:id="@+id/action_homeScreen_to_bookScreen"
+            app:destination="@id/bookScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveScreen"
+        tools:layout="@layout/screen_save"
+        android:name="uz.gita.bookappmn.presentation.ui.save.SaveScreen"
+        android:label="SaveScreen" >
+        <action
+            android:id="@+id/action_saveScreen_to_bookScreen"
+            app:destination="@id/bookScreen" />
+        <action
+            android:id="@+id/action_saveScreen_to_pdfActivity2"
+            app:destination="@id/pdfActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/exploreScreen"
+        tools:layout="@layout/screen_explore"
+        android:name="uz.gita.bookappmn.presentation.ui.explore.ExploreScreen"
+        android:label="ExploreScreen" >
+        <action
+            android:id="@+id/action_exploreScreen_to_bookScreen"
+            app:destination="@id/bookScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookScreen"
+        tools:layout="@layout/screen_book"
+        android:name="uz.gita.bookappmn.presentation.ui.book.BookScreen"
+        android:label="BookScreen" >
+        <argument
+            android:name="bookData"
+            app:argType="uz.gita.bookappmn.data.model.BookData"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_bookScreen_to_pdfActivity"
+            app:destination="@id/pdfActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/pdfActivity"
+        android:name="uz.gita.bookappmn.PdfActivity"
+        android:label="activity_pdf"
+        tools:layout="@layout/activity_pdf" >
+        <argument
+            android:name="bookData"
+            app:argType="uz.gita.bookappmn.data.model.BookData"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </activity>
+</navigation>

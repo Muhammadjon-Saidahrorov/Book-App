@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">E-Book</string>
+    <string name="start_reading">Start Reading</string>
+    <string name="bosh_sahifa">Bosh Sahifa</string>
+    <string name="book_name">Book name</string>
+    <string name="by_author">by Author</string>
+    <string name="hozirda_o_qilmoqda">Hozirda O\'qilmoqda</string>
+    <string name="ebook">E-Book</string>
+    <string name="barcha_kitoblar">Barcha kitoblar</string>
+</resources>
